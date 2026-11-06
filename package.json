@@ -1,0 +1,12 @@
+{
+  "name": "terminal-commands-cloud-template",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reusable GitHub Codespaces environment for Terminal Commands",
+  "scripts": {
+    "start": "terminal-commands cloud-start"
+  },
+  "dependencies": {
+    "terminal-commands": "0.3.1"
+  }
+}
