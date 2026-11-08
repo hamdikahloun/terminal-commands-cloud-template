@@ -1,55 +1,59 @@
-# terminal-commands-cloud-template
+# Terminal Commands cloud starter
 
-Reusable public GitHub Codespaces starter for Terminal Commands; no user source
-code or pairing credentials. The image includes GitHub CLI (`gh`) for signing in
-to repositories that the starter's default Codespaces token cannot access.
+Reusable public GitHub Codespaces starter for Terminal Commands. This repository
+contains no user source code or pairing credentials.
 
-## Private repositories
+## Default setup
 
-Connecting this machine to Terminal Commands does not grant access to your other
-private repositories. In the Codespace terminal, sign in with the GitHub account
-that has access to the target repository and configure the saved Git helper.
-Run each line below as one complete command; the `env` prefix belongs on the
-same line as `gh` or `git`.
+Start from the Terminal Commands Workspace card and review its cloud-machine
+consent. GitHub installs the pinned companion, then `npm start` connects the
+machine. The card confirms readiness once the paired device is online.
 
-```sh
-env -u GH_TOKEN -u GITHUB_TOKEN -u GH_CONFIG_DIR -u XDG_CONFIG_HOME gh auth login --hostname github.com --git-protocol https --web
-env -u GH_TOKEN -u GITHUB_TOKEN -u GH_CONFIG_DIR -u XDG_CONFIG_HOME gh auth setup-git --hostname github.com
-```
+## Use your own template
 
-Complete authorization in GitHub's browser page. Keep tokens and authorization
-codes there; do not paste them or full environment output into chat. These
-commands temporarily ignore the starter's limited token and use the normal
-home-based configuration without changing the companion's pairing environment.
+You can manually copy or fork this starter into a repository you maintain, add
+your preferred image, features, and Codespaces repository permissions, and commit
+those options. In the Workspace card, choose **Use my own template**, enter your
+repository's GitHub URL, and continue on GitHub to create the machine with the
+options and access you approve there.
 
-Replace `OWNER/REPO` and verify access:
+Gateway **0.6.9** and companion **0.3.4** or later support this flow. Terminal
+Commands does not create, fork, or edit your repository and requests no additional
+GitHub App permissions.
 
-```sh
-env -u GH_TOKEN -u GITHUB_TOKEN -u GH_CONFIG_DIR -u XDG_CONFIG_HOME git -C /tmp ls-remote https://github.com/OWNER/REPO.git HEAD
-```
+Follow the [custom-template guide](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/cloud-codespaces.md#use-your-own-template)
+for a minimal configuration and permission examples. GitHub requires additional
+repositories to share the source repository's owner. Commit access changes
+before creating a **new** Codespace; rebuilding an existing one does not apply
+new repository grants. See [GitHub's repository access documentation](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces).
 
-For a direct terminal clone, use the same prefix with `git clone` from your
-intended working directory. Companion `0.3.3` preserves the home directory so
-commands from Terminal Commands can use this saved helper as well. Repository
-access remains limited to what the authenticated account has authorized.
+## Private Git operations
+
+Companion `0.3.4` lets direct Git network commands use the Codespace's native
+GitHub HTTPS credential through a temporary local helper. It uses only
+repository access already granted by GitHub; pairing a machine does not grant
+access to other private repositories. Native access requires no GitHub CLI
+installation, separate CLI sign-in, or token copying.
+
+Submit Git as the executable. Shell-launched Git, aliases, and commands with
+Git configuration overrides do not receive this automatic helper. For other
+authentication setups, see [private repository access](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/cloud-codespaces.md#private-repository-access).
 
 ## Existing Codespaces
 
-A template update does not update an existing Codespace. If `gh` is missing,
-install it using the [official GitHub CLI instructions for Debian](https://github.com/cli/cli/blob/trunk/docs/install_linux.md#debian)
-inside that Codespace, then follow the sign-in steps above. Installing the CLI
-does not itself sign in or grant repository permissions.
-
-After `terminal-commands@0.3.3` has been published, run this from the starter's
-directory to update an older companion:
+Publishing this template does not update an existing machine. From its starter
+directory, install the exact released client:
 
 ```sh
-npm install --save-exact terminal-commands@0.3.3
+npm install --save-exact terminal-commands@0.3.4
 ```
 
-Stop and start the same Codespace so its companion uses the updated package.
-Keep its pairing state; deleting or recreating the machine is unnecessary.
+Stop and start the same Codespace to use the updated companion. Keep its pairing
+state; a package update does not require deleting the machine. Changes to
+GitHub repository-access grants still require a new Codespace as described
+above.
 
-See [Terminal Commands cloud setup](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/cloud-codespaces.md#private-repository-access),
-[GitHub repository access](https://docs.github.com/en/codespaces/managing-your-codespaces/managing-repository-access-for-your-codespaces),
-and [GitHub CLI authentication](https://cli.github.com/manual/gh_auth_login).
+Cloud mode allows unattended full-shell execution after consent in the card.
+Approved programs run with the Codespace user's OS permissions. See the
+[cloud security model](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/cloud-codespaces.md#security-model)
+for the first-pairing trust boundary and credential handling.

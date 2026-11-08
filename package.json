@@ -7,6 +7,6 @@
     "start": "terminal-commands cloud-start"
   },
   "dependencies": {
-    "terminal-commands": "0.3.3"
+    "terminal-commands": "0.3.4"
   }
 }
