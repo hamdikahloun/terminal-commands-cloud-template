@@ -1,6 +1,9 @@
 {
   "name": "Terminal Commands Cloud",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
   "postCreateCommand": "npm install --no-audit --no-fund",
   "postStartCommand": "npm start"
 }
