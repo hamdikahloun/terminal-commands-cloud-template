@@ -8,6 +8,8 @@ contains no user source code or pairing credentials.
 Start from the Terminal Commands Workspace card and review its cloud-machine
 consent. GitHub installs the pinned companion, then `npm start` connects the
 machine. The card confirms readiness once the paired device is online.
+This starter pins companion `0.3.5`, which fixes reconnection after a Codespace
+restart while preserving its saved device pairing.
 
 ## Use your own template
 
@@ -29,7 +31,7 @@ new repository grants. See [GitHub's repository access documentation](https://do
 
 ## Private Git operations
 
-Companion `0.3.4` lets direct Git network commands use the Codespace's native
+Companion `0.3.4` and newer let direct Git network commands use the Codespace's native
 GitHub HTTPS credential through a temporary local helper. It uses only
 repository access already granted by GitHub; pairing a machine does not grant
 access to other private repositories. Native access requires no GitHub CLI
@@ -45,7 +47,7 @@ Publishing this template does not update an existing machine. From its starter
 directory, install the exact released client:
 
 ```sh
-npm install --save-exact terminal-commands@0.3.4
+npm install --save-exact terminal-commands@0.3.5
 ```
 
 Stop and start the same Codespace to use the updated companion. Keep its pairing
