@@ -1,6 +1,9 @@
 {
   "name": "Terminal Commands Cloud",
-  "image": "mcr.microsoft.com/devcontainers/javascript-node:24-bookworm",
-  "postCreateCommand": "npm install --no-audit --no-fund",
-  "postStartCommand": "npm start"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/hamdikahloun/terminal-commands/terminal-commands:1": {
+      "clientVersion": "0.3.5"
+    }
+  }
 }
