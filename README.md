@@ -22,9 +22,6 @@ The Feature installs Terminal Commands `0.3.5` and runs the existing secure
 `cloud-start` command. Startup and reconnection require no `package.json`,
 `npm install`, or `npm start` script in this repository.
 
-The starter also includes the official `sshd` Dev Container Feature to allow
-GitHub CLI access with `gh codespace ssh` for troubleshooting.
-
 ## Use your own Dev Container
 
 To connect a Codespace based on your own repository, add this entry to its
