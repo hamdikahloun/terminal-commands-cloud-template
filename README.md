@@ -4,7 +4,7 @@ An empty GitHub Codespaces workspace that connects to Terminal Commands in
 ChatGPT. This public repository contains only this README and the Dev Container
 configuration—no application code, project dependencies, or credentials.
 
-The [Terminal Commands Dev Container Feature](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/devcontainer-feature.md)
+The [Terminal Commands Dev Container Feature](https://github.com/users/hamdikahloun/packages/container/package/terminal-commands%2Fterminal-commands)
 installs the companion with its own Node.js runtime. It starts automatically
 when the Codespace starts, without changing your project's tools or scripts.
 
@@ -21,6 +21,9 @@ when the Codespace starts, without changing your project's tools or scripts.
 The Feature installs Terminal Commands `0.3.5` and runs the existing secure
 `cloud-start` command. Startup and reconnection require no `package.json`,
 `npm install`, or `npm start` script in this repository.
+
+The starter also includes the official `sshd` Dev Container Feature to allow
+GitHub CLI access with `gh codespace ssh` for troubleshooting.
 
 ## Use your own Dev Container
 
@@ -51,5 +54,5 @@ tokens, or other sensitive files to it. Starting a Codespace does not publish
 its working files, but pushing commits to this repository can make them
 public. Use your own private repository for private projects.
 
-See the [Cloud Codespaces guide](https://github.com/hamdikahloun/terminal-commands/blob/main/docs/cloud-codespaces.md)
-for pairing, access, and troubleshooting details.
+For Codespaces usage and troubleshooting, see [GitHub Codespaces documentation](https://docs.github.com/en/codespaces).
+For customizing the installation, see the [Dev Container Features specification](https://containers.dev/features).
