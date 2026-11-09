@@ -2,6 +2,9 @@
   "name": "Terminal Commands Cloud",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
+    "ghcr.io/devcontainers/features/sshd:1": {
+      "version": "latest"
+    },
     "ghcr.io/hamdikahloun/terminal-commands/terminal-commands:1": {
       "clientVersion": "0.3.5"
     }
