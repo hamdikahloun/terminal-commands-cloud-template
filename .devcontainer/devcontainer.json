@@ -1,0 +1,35 @@
+{
+  "name": "Terminal Commands Cloud",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    "ghcr.io/hamdikahloun/terminal-commands/terminal-commands:1": {
+      "clientVersion": "0.3.6"
+    }
+  },
+  "forwardPorts": [
+    3000,
+    4000
+  ],
+  "portsAttributes": {
+    "3000": {
+      "label": "Node.js web server",
+      "onAutoForward": "notify"
+    },
+    "4000": {
+      "label": "React / Vite development server",
+      "onAutoForward": "notify"
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "notify"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": true,
+        "remote.autoForwardPortsSource": "process",
+        "remote.restoreForwardedPorts": true
+      }
+    }
+  }
+}
